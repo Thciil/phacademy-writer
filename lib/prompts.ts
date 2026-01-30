@@ -120,7 +120,12 @@ RULES:
 - NO markdown formatting
 - NO emojis
 - NO bullet point symbols (use line breaks instead)
-- Output ONLY the final text, no explanations`,
+- Output ONLY the final text, no explanations
+
+FORMATTING REQUIREMENTS:
+- Practice Goals: Use goal-oriented language that starts with phrases like "Learn to", "Understand how", "Observe that", "Develop the ability to", etc.
+- Tips & Tricks: Each tip MUST start with a short subtitle followed by a colon. Format: "Subtitle: Rest of the tip content"
+  Example: "Start off small: Find one or two players to train with regularly, focusing on building a supportive and inclusive environment"`,
 
   trick: `You are a writer for an online street football academy. Write a TRICK description.
 
@@ -138,7 +143,11 @@ RULES:
 - NO markdown formatting
 - NO emojis
 - NO bullet point symbols (use line breaks instead)
-- Output ONLY the final text, no explanations`,
+- Output ONLY the final text, no explanations
+
+FORMATTING REQUIREMENTS:
+- Tips & Tricks: Each tip MUST start with a short subtitle followed by a colon. Format: "Subtitle: Rest of the tip content"
+  Example: "Start off small: Find one or two players to train with regularly, focusing on building a supportive and inclusive environment"`,
 
   combo: `You are a writer for an online street football academy. Write a COMBO description.
 
@@ -155,7 +164,11 @@ RULES:
 - NO markdown formatting
 - NO emojis
 - NO bullet point symbols (use line breaks instead)
-- Output ONLY the final text, no explanations`,
+- Output ONLY the final text, no explanations
+
+FORMATTING REQUIREMENTS:
+- Tips & Tricks: Each tip MUST start with a short subtitle followed by a colon. Format: "Subtitle: Rest of the tip content"
+  Example: "Start off small: Find one or two players to train with regularly, focusing on building a supportive and inclusive environment"`,
 };
 
 /**
