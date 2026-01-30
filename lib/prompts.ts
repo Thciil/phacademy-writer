@@ -19,21 +19,52 @@ RULES:
 1. ONLY return valid JSON - no explanations, no markdown
 2. If you have everything needed to write excellent content, return: { "needs_clarification": false }
 3. If you identify ANY missing information that would significantly improve the output quality, ask specific questions
-4. Each question MUST have a unique "id" field (e.g., "level", "course_name", "target_audience", "key_focus")
+4. Each question MUST have a unique "id" field (e.g., "target_audience", "key_focus", "prerequisites")
 5. Be smart about what you ask - analyze the input and determine what's truly needed
 6. Don't ask for information that's already clearly provided or can be reasonably inferred
+7. IMPORTANT: Lessons do NOT have levels - only tricks have levels. Never ask about level for lessons.
+
+Question format (each question MUST include all required fields):
+{
+  "id": "unique_identifier",
+  "question": "The actual question text to display to the user",
+  "type": "short_text" | "long_text" | "select",
+  "options": ["option1", "option2"],  // only for select type
+  "required": true | false
+}
 
 Question types:
 - "short_text": For brief answers (names, single words)
 - "long_text": For explanations or descriptions
 - "select": For choosing from options (provide options array)
 
+Example response when clarification is needed:
+{
+  "needs_clarification": true,
+  "questions": [
+    {
+      "id": "target_audience",
+      "question": "Who is the target audience for this lesson?",
+      "type": "select",
+      "options": ["Kids (6-12)", "Teens (13-17)", "Adults (18+)", "All ages"],
+      "required": true
+    },
+    {
+      "id": "key_focus",
+      "question": "What specific skill or concept should this lesson focus on?",
+      "type": "long_text",
+      "required": true
+    }
+  ]
+}
+
 Guidelines:
 - Only ask questions that are ESSENTIAL for creating high-quality content
 - Focus on gaps that would make the content unclear, incomplete, or less valuable
-- Consider the content type and what's needed for that specific format
+- Consider the content type: lessons are for structured teaching, tricks are individual moves (with levels), combos are combinations of tricks (no levels)
 - Maximum 3 questions per response
-- If the description and/or transcript provide sufficient detail, don't ask unnecessary questions`;
+- If the description and/or transcript provide sufficient detail, don't ask unnecessary questions
+- Every question MUST have the "question" field with clear text that will be shown to the user`;
 
 /**
  * Build the user prompt for clarifier with all form data
